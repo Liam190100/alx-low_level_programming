@@ -1,43 +1,25 @@
 #include "main.h"
-#include <stdio.h>
-
-
 /**
- * strcat - Concatenates the string pointed to by @src, including the terminating
- * null byte, to the end of the string pointed to by @dest.
- * @dest: A pointer to the string to be concatenated upon.
- * @src: The source string to be appended to @dest.
- * Return: A pointer to the destination string @dest.
- *
- * Find the end of the dest string
- * Append src to the end of dest
+ * *_strcat - concatenates 2 strings.
+ * @main: source.
+ * @surb: destination.
+ * Return: the pointer to dest.
+ * betty style doc for function main goes there
  */
-
-char *strcat(char *dest, const char *src)
-char *_strcat(char *dest, char *src)
-
+char *_strcat(char *main, char *surb)
 {
-
-	int index = 0, dest_len = 0;
-
-	while (dest[index++])
-	dest_len++;
-
-	for (index = 0; src[index]; index++)
-	dest[dest_len++] = src[index];
-	return (dest);
-    	  char *dest_end = dest;
-	      while (*dest_end != '\0') 
-	      {
-		  dest_end++;
-	      }
-
-	      while (*src != '\0') 
-	      {
-	          *dest_end = *src;
-		  dest_end++;
-		  src++;
-	      }
-	      *dest_end = '\0';
-	      return dest;
+int str1 = 0, str2 = 0;
+while (*(main + str1) != '\0')
+{
+str1++;
+}
+while (str2 >= 0)
+{
+*(main + str1) = *(surb + str2);
+if (*(surb + str2) == '\0')
+break;
+str1++;
+str2++;
+}
+return (main);
 }
