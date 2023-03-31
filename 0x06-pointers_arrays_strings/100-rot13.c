@@ -1,49 +1,28 @@
 #include "main.h"
+
 /**
- * rot13 - encodes a string using rot13
- * @x: input string.
- * Return: the pointer to destination
- * betty style doc for function main goes there
- * @y: input string.
- * Return: the pointer to dest.
+ * rot13 - encodes a string in rot13
+ * @s: string to be encoded
+ * Return: the resulting string
  */
-char *rot13(char *x)
+char *rot13(char *s)
+{
+	int i, j;
 
-char *rot13(char *y)
-{
-int encode = 0, i;
-char alph[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-char rot13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
-while (*(x + encode) != '\0')
-{
-for (i = 0; i < 52; i++)
-{
-if (*(x + encode) == alph[i])
-{
-*(x + encode) = rot13[i];
-break;
-}
-}
-encode++;
-}
-return (x);
-}
-	int count = 0, i;
-	char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char rot13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	while (*(y + count) != '\0')
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (i = 0; i < 52; i++)
+		for (j = 0; a[j] != '\0'; j++)
 		{
-			if (*(y + count) == alphabet[i])
+			if (s[i] == a[j])
 			{
-				*(y + count) = rot13[i];
-			break;
+				s[i] = b[j];
+				break;
 			}
 		}
-		count++;
 	}
 
-	return (y);
+	return (s);
 }
