@@ -4,11 +4,11 @@
 
 /**
   * finite disappointment
-  * @ptr: allocate 
-  * @old_size: of bytes
-  * @new_size: numbers
+  * @ptr: .....
+  * @old_size: .....
+  * @new_size: ......
   *
-  * Return: a null 
+  * Return:... 
   */
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
