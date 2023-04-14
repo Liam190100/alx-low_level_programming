@@ -1,19 +1,21 @@
-#include <stdlib.h> 
 #include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
+
 /**
- * Memory on  function that allocates memory
- * @b: number memory of bytes to allocates
- *
- * Return:a pointer allocate memory
- *status value is equal to 98.
- */
+  * malloc_checked - memory of the allocation 
+  * @b: the size to allocate
+  * pointer is to refer to memory 
+  * Return: Nothing cause of void 
+  */
 void *malloc_checked(unsigned int b)
 {
-	char *p;
+	void *p;
 
 	p = malloc(b);
+
 	if (p == NULL)
 		exit(98);
+
 	return (p);
 }
-
