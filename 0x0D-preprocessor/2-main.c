@@ -1,13 +1,12 @@
 #include <stdio.h>
 
 /**
- * main - prints the name of the file
- *
- * Return: Always 0 (Success)
- */
-int ain(void)
+  * main - Prints the file name of the program
+  *
+  * Return: Always zero
+  */
+int main(void)
 {
 	printf("%s\n", __FILE__);
 	return (0);
 }
-
