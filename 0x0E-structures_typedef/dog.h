@@ -1,5 +1,5 @@
-#define DOG_H
-#ifndef DOG_H
+#define _DOG.H_
+#ifndef _DOG.H_
 #include <stdio.h>
 	/**
 	 * struct dog - Dog character
