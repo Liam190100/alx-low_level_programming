@@ -1,25 +1,23 @@
-#include "lists.h"
 #include <stdio.h>
-#include "string.h"
+#include "lists.h"
 /**
- * print_listint - prints the number of linked list of the node.
- * @h: linked list is printed.
+ * print_listint - prints number of lists of elements
+ * @h: linked list is to be print
  *
- * Return:number in the nodes.
+ * Return: the number of nodes in the linkeed list
  */
-
 size_t print_listint(const listint_t *h)
 {
-	size_t count = 0;
+	size_t number = 0;
 
-	while (h != NULL)
+	while (h)
 
 	{
 		printf("%d\n", h->n);
-		count++;
+		number++;
 		h = h->next;
 	}
 
-	return (count);
+	return (number);
 }
 
