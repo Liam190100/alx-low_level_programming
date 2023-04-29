@@ -3,12 +3,11 @@
 #include "variadic_functions.h"
 
 /**
-  * print_numbers - ...
-  * @separator: ...
-  * @n: ...
-  *
-  * Return: ...
-  */
+ * print_numbers - Prints numbers.
+ * @separator: The show the when printed numbers.
+ * @n: The number of integers.
+ * @...: A variable number of printed.
+*/
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list args;
