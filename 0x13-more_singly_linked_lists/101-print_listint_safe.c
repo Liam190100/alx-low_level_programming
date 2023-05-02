@@ -8,28 +8,78 @@
  *
  * Return: The nodes in the list of that number
  */
+size_t looped_listint_len(const listint_t *head)
+{
+ const listint_t *dog, *cat;
+ size_t nodes = 1;
 
+ if (head == NULL || head->next == NULL)
+ return (0);
+
+ dog = head->next;
+ cat = (head->next)->next;
+
+ while (cat)
+ {
+ if (dog == cat)
+ {
+ dog = head;
+ while (dog !=cat)
+ {
+ nodes++;
+ dog = dog->next;
+ cat = cat->next;
+ }
+
+ dog = dog->next;
+ while (dog != cat)
+ {
+ nodes++;
+ dog = dog->next;
+ }
+
+ return (nodes);
+ }
+
+ dog = dog->next;
+ cat = (cat->next)->next;
+ }
+
+ return (0);
+}
+
+/**
+ * print_listint_safe - Prints a listint_t list safely.
+ * @head: A poins the head of listint_t list.
+ *
+ * Return: The nodes in the list.
+ */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *current = head, *prev;
-	size_t count = 0;
+ size_t nodes, index = 0;
 
-	while (current != NULL)
-	{
-	printf("[%p] %d\n", (void *)current, current->n);
-	count++;
+ nodes = looped_listint_len(head);
 
-	prev = current;
-	current = current->next;
+ if (nodes == 0)
+ {
+ for (; head != NULL; nodes++)
+ {
+ printf("[%p] %d\n", (void *)head, head->n);
+ head = head->next;
+ }
+ }
 
-	if (prev <= current)
-	{
-	printf("-> [%p] %d\n", (void *)current, current->n);
-	count++;
-	break;
-	}
-	}
+ else
+ {
+ for (index = 0; index < nodes; index++)
+ {
+ printf("[%p] %d\n", (void *)head, head->n);
+ head = head->next;
+ }
 
-	return (count);
+ printf("-> [%p] %d\n", (void *)head, head->n);
+ }
+
+ return (nodes);
 }
 
