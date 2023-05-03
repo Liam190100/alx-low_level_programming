@@ -6,7 +6,7 @@ size_t looped_listint_len(const listint_t *head);
 size_t print_listint_safe(const listint_t *head);
 
 /**
- * print_listint_safe - Print listint_t linked list with loop
+ * looped_listint_len - Print listint_t linked list with loop
  * @head: Points to head of node list
  *
  * Return: The nodes in the list of that number
