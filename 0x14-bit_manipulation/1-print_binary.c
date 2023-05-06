@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * binary_print - prints the binary representation of a decimal number
+ * putchar_number - prints the binary representation of a decimal number
  *
  * @n: the number to print in binary
  */
