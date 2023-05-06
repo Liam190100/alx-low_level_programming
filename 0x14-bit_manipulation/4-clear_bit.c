@@ -4,7 +4,7 @@
 /**
  * clear_bit - sets the number of a given bit to 0
  * @n: points element to change
- * @index: index of the bit 
+ * @index:index of the bit
  *
  * Return: (1 for success),(-1 for failure)
  */
