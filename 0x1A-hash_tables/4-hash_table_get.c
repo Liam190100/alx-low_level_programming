@@ -4,7 +4,7 @@
  * hash_table_get - Retrieves the value associated with a key in a hash table.
  * @ht: A pointer to the hash table.
  * @key: The key to get the value for.
- * Return: If the key cannot be found - NULL. Otherwise - the value associated with the key in ht.
+ * Return: NULL. Otherwise - the value associated with the key in ht.
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {

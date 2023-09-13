@@ -54,7 +54,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 
-	/* Add the new node to the beginning of the linked list at the index */
+	/* Add the new node to the linked list at the index */
 	new_node->next = ht->array[index];
 	ht->array[index] = new_node;
 
