@@ -1,0 +1,26 @@
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra -pedantic
+NAME = school
+RM = rm -f
+
+SRC = main.c file1.c file2.c file3.c  # List all your .c source files here
+OBJ = $(SRC:.c=.o)  # Object files will be automatically generated from the source files
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) -o $@ $^
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	$(RM) *~ $(OBJ) $(NAME)  # Deletes Emacs and Vim temporary files, object files, and the executable
+
+oclean:
+	$(RM) $(OBJ)  # Deletes only the object files
+
+fclean: clean oclean
+
+re: fclean all
+
